@@ -1,0 +1,126 @@
+Waveguide Mode Visualizer
+Setup and Run Instructions
+
+Main file to use:
+app.py
+
+Optional file:
+main.py
+
+Use main.py only if you want the older terminal-based version.
+That version is mostly useful for manually generating field plot figures.
+The main version of the project is the Streamlit app in app.py.
+
+
+Project files you should have:
+- app.py
+- main.py
+- field_plotter.py
+- waveguide_math.py
+- requirements.txt
+
+
+Step 1. Install Python
+Install Python 3.11 or 3.12 on your computer.
+Make sure Python is added to PATH during installation.
+
+
+Step 2. Install PyCharm
+Install PyCharm Community or Professional.
+
+
+Step 3. Open the project folder in PyCharm
+Open the folder that contains:
+- app.py
+- main.py
+- field_plotter.py
+- waveguide_math.py
+- requirements.txt
+
+
+Step 4. Create a new virtual environment
+Do not copy someone else's .venv folder.
+Make a fresh one on your own computer.
+
+In PyCharm:
+- File
+- Settings
+- Project
+- Python Interpreter
+- Add Interpreter
+- Add Local Interpreter
+- Virtualenv
+- Create New
+
+
+Step 5. Open the terminal in PyCharm
+Use one of these:
+- View -> Tool Windows -> Terminal
+- Alt + F12
+
+
+Step 6. Install the required packages
+In the PyCharm terminal, run:
+
+python -m pip install -r requirements.txt
+
+
+If requirements.txt does not work for some reason, run:
+
+python -m pip install numpy matplotlib streamlit
+
+
+Step 7. Run the main app
+In the PyCharm terminal, run:
+
+python -m streamlit run app.py
+
+
+Step 8. Open the app
+A browser tab should open automatically.
+If it does not, copy the local address from the terminal into your browser.
+It is usually:
+
+http://localhost:8501
+
+
+Step 9. Test a known working case
+Use these settings:
+- Waveguide preset: WR-90
+- Mode preset: TE10
+- Relative permittivity er: 1
+- Operating frequency: 10 GHz
+
+Expected result:
+- Mode: TE10
+- Cutoff frequency: about 6.557 GHz
+- Status: Propagating
+
+
+Optional: Run the terminal version
+If you want to use the older terminal version, run:
+
+python main.py
+
+Use main.py only if you want the non-Streamlit version for manual field plot generation.
+
+
+Common fixes
+
+If you get ModuleNotFoundError:
+Run:
+python -m pip install -r requirements.txt
+
+If you get a .venv or pyvenv.cfg error:
+- Delete the .venv folder
+- Create a new interpreter in PyCharm
+- Reinstall the packages
+
+If Streamlit says command not found:
+Run:
+python -m streamlit run app.py
+
+Do not use only:
+streamlit run app.py
+
+The python -m version is better because it uses the project interpreter.
